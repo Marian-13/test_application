@@ -1,0 +1,8 @@
+.comments {
+  list-style-type: none;
+  padding: 0;
+  height: $comments-height;
+  overflow-y: auto;
+  display: none;
+  // font-size: $font-size;
+}

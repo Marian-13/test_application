@@ -1,0 +1,5 @@
+<%= form_tag photos_path, method: :get, class: 'form-inline tag-input-form' do %>
+  <%= label_tag :tag %>
+  <%= text_field_tag :tag, nil, class: 'form-control', placeholder: default_tag %>
+  <%= submit_tag 'Fetch', name: nil, class: 'btn btn-success tag-submit' %>
+<% end %>

@@ -1,0 +1,11 @@
+<div class='photos-pagination'>
+  <% # TODO %>
+  <%= render partial: 'photos/previous_photos_form', locals: { photos: photos } %>
+  <!-- <button class="btn btn-default left disabled">Previous</button> -->
+
+  <% if photos.pagination.next_max_tag_id %>
+    <%= render partial: 'photos/next_photos_form', locals: { photos: photos } %>
+  <% else %>
+    <button class="btn btn-default rigth disabled">Next</button>
+  <% end %>
+</div>

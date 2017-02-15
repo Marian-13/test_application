@@ -1,0 +1,7 @@
+var comments = $('#photo-<%= params[:photo_id] %>').find('.comments');
+
+comments.html(
+  '<%= escape_javascript(render "comments/comments", comments: @comments) %>'
+);
+
+comments.toggle();

@@ -1,0 +1,28 @@
+<div class="null-font-size">
+  <% @photos.each do |photo| %>
+    <%= render 'photos/photo', photo: photo %>
+  <% end %>
+</div>
+
+<footer>
+  <%= render partial: 'photos/photos_pagination', locals: { photos: @photos } %>
+  <%= render partial: 'photos/recent_photos_form' %>
+</footer>
+
+<% # TODO Unobtrusive %>
+<script type="text/javascript">
+  $('.photo').each(function(index) {
+    var commentsSubmit = $(this).find('.comments-submit');
+    var photoId  = $(this).data('photo-id');
+
+    commentsSubmit.click(function(event) {
+      event.preventDefault();
+      toggleComments(commentsSubmit, photoId);
+    });
+  });
+
+  // $('.tag-submit').click(function(event) {
+  //   event.preventDefault();
+  //   tagSubmitClick($(this));
+  // });
+</script>

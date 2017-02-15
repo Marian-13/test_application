@@ -1,0 +1,6 @@
+<%= form_tag photo_comments_path(photo.id), method: :get, remote: true, class: 'form-inline' do %>
+  <%= label_tag 'Comments:' %>
+  <%= submit_tag 'Show/Hide',
+                 name: nil,
+                 class: 'btn btn-link comments-submit' %>
+<% end %>

@@ -1,0 +1,29 @@
+.null-font-size {
+  font-size: 0;
+}
+
+.column {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media only screen and (max-width: 450px) {
+  .column { width: 100%; }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 675px) {
+  .column { width: 50%; }
+}
+
+@media only screen and (min-width: 675px) and (max-width: 900px) {
+  .column { width: 33.3%; }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1125px) {
+  .column { width: 25%; }
+}
+
+@media only screen and (min-width: 1125px) {
+  .column { width: 20%; }
+}

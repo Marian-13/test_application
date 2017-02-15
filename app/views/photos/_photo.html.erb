@@ -1,0 +1,29 @@
+<div class="photo-wrapper column">
+  <div class="photo" id="photo-<%= photo.id %>" data-photo-id="<%= photo.id %>">
+    <div class="photo-body">
+      <%= image_tag photo.images.standard_resolution.url, class: 'photo-image', alt: 'Photo' %>
+    </div>
+
+    <div class="photo-footer">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Tags:</strong>
+
+          <% photo.tags.each do |tag| %>
+            <%= tag_with_leading_hash(tag) %>
+          <% end %>
+        </li>
+
+        <li class="list-group-item">
+          <strong>Likes:</strong>
+          <%= photo.likes.count %>
+        </li>
+
+        <li class="list-group-item">
+          <%= render partial: 'comments/recent_comments_form', locals: { photo: photo } %>
+          <ul class="comments"></ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

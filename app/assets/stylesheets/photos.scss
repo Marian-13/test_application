@@ -1,0 +1,55 @@
+.photo-wrapper {
+  border: 5px solid transparent;
+}
+
+.photo {
+  font-size: $font-size;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
+
+.photo-body {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.photo-image {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  width: 100%;
+}
+
+.photo-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+  background-color: #f5f5f5;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+.photos-pagination {
+  display: inline;
+
+  form {
+    display: inline;
+    padding: 0;
+  }
+
+  .left {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: $border-radius;;
+    border-top-left-radius: $border-radius;;
+  }
+
+  .rigth {
+    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
+.tag-input-form {
+  float: right;
+}
