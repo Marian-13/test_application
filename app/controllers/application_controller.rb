@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   def user_signed_in_via_instagram?
     !!session[:instagram_access_token]
   end
+  helper_method :user_signed_in_via_instagram?
 
   def authorize_user
     redirect_to root_path unless user_signed_in_via_instagram?

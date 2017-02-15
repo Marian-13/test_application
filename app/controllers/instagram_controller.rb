@@ -18,6 +18,11 @@ class InstagramController < ApplicationController
     redirect_to photos_path
   end
 
+  def disconnect
+    session[:instagram_access_token] = nil
+    redirect_to root_url
+  end
+
   private
 
     def callback_url
