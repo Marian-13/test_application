@@ -1,5 +1,5 @@
 module PhotosHelper
-  def tag_with_leading_hash(tag)
-    TagWithLeadingHash.new(tag).call
+  def tag_string_with_leading_hash(tag)
+    TagStringWithLeadingHash.new(tag).call
   end
 end

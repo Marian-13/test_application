@@ -19,7 +19,10 @@ class InstagramController < ApplicationController
   end
 
   def disconnect
-    session[:instagram_access_token] = nil
+    if user_signed_in_via_instagram?
+      session[:instagram_access_token] = nil
+    end
+
     redirect_to root_url
   end
 
