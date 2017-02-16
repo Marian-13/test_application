@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
       @request_options = request_options
     end
 
-    # TODO
     def generate
+      # TODO
       unique_key = @api_request.required_args
       unique_key = unique_key.transform_values { |value| value.to_s }
       unique_key = unique_key.merge(@request_options)

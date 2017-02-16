@@ -1,24 +1,27 @@
-# README
+## Test Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Requirements
 
-Things you may want to cover:
+Ruby  2.3.1
+Rails 5.0.1
 
-* Ruby version
+### Getting started
+```
+mkdir temp
+cd temp
+git clone https://github.com/marian13/test_application.git
+cd test_application
+bundle install
+rake db:create
+rake db:migrate
+rails server
+```
+### Notice
+This application is allowed to fetch only the 20 most recent photo from
+https://www.instagram.com/marian144519/
 
-* System dependencies
+### Known issues
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Pagination 'Previous' button isn't working properly
+2. Majority of specs are failed using `bundle exec rspec spec/some_folder`
+but same specs are passed successfully running `bundle exec rspec spec/some_folder/some_spec`

@@ -1,6 +1,6 @@
 <div class="null-font-size">
   <% @photos.each do |photo| %>
-    <%= render 'photos/photo', photo: photo %>
+    <%= render partial: 'photos/photo', locals: { photo: photo } %>
   <% end %>
 </div>
 
@@ -9,7 +9,7 @@
   <%= render partial: 'photos/recent_photos_form' %>
 </footer>
 
-<% # TODO Unobtrusive %>
+
 <script type="text/javascript">
   $('.photo').each(function(index) {
     var commentsSubmit = $(this).find('.comments-submit');
@@ -20,9 +20,4 @@
       toggleComments(commentsSubmit, photoId);
     });
   });
-
-  // $('.tag-submit').click(function(event) {
-  //   event.preventDefault();
-  //   tagSubmitClick($(this));
-  // });
 </script>

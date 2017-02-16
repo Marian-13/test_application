@@ -4,8 +4,7 @@ class PhotosController < ApplicationController
       @photos = photos
     end
 
-    def call(options={})
-      # TODO
+    def call(options = {})
       array = @photos.sort_by { |photo| photo.likes.count }
       sorted_photos = @photos.replace(array)
       options[:reverse] ? sorted_photos.reverse : sorted_photos
