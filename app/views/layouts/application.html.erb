@@ -12,7 +12,7 @@
 
   <body>
     <% if user_signed_in_via_instagram? %>
-      <%= link_to 'Log out', instagram_disconnect_path %>
+      <%= link_to 'Log out', instagram_disconnect_path, method: :post %>
     <% end %>
 
     <%= render partial: 'shared/notifications' %>
