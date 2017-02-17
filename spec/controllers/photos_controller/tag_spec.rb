@@ -14,7 +14,6 @@ class PhotosController < ApplicationController
       end
 
       context 'when tag is valid (consists of only word characters)' do
-        # http://rubular.com/
         let(:valid_tag_string) { 'task' }
 
         it 'returns true' do
