@@ -5,7 +5,8 @@
 </div>
 
 <footer>
-  <%= render partial: 'photos/photos_pagination', locals: { photos: @photos } %>
+  <%= render partial: 'photos/photos_pagination',
+             locals: { photos: @photos, current_page: @current_page, tag: @tag } %>
   <%= render partial: 'photos/recent_photos_form' %>
 </footer>
 

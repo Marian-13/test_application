@@ -1,5 +1,4 @@
 require 'rails_helper'
-require_relative '../test_data'
 
 class PhotosController < ApplicationController
   describe FetchPhotosByTag do

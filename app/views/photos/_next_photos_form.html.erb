@@ -1,5 +1,6 @@
 <%= form_tag photos_path, method: :get do %>
-  <%= hidden_field_tag :max_tag_id, photos.pagination.next_max_tag_id %>
-  <%= hidden_field_tag :tag, params[:tag] %>
+  <%= hidden_field_tag :next_page, next_page(current_page) %>
+  <%= hidden_field_tag :tag, tag %>
+  <%= hidden_field_tag :next_max_tag_id, photos.pagination.next_max_tag_id %>
   <%= submit_tag 'Next', name: nil, class: 'btn btn-default rigth' %>
 <% end %>

@@ -65,3 +65,5 @@ end
 
 require 'webmock/rspec'
 WebMock.disable_net_connect!(allow_localhost: true)
+
+require_relative 'test_data'

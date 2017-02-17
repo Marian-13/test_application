@@ -1,5 +1,4 @@
 require 'rails_helper'
-require_relative 'test_data'
 
 RSpec.describe CommentsController, type: :controller do
   it { is_expected.to use_before_action(:authorize_user) }

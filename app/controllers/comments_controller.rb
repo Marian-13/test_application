@@ -4,11 +4,12 @@ class CommentsController < ApplicationController
   def index
     api_request = FetchComments.new(instagram_client, photo_id: params[:photo_id])
 
-    unique_key =
-      ApplicationController::CacheUniqueKeyGenerator.new(api_request).generate
+    unique_key = CacheUniqueKeyGenerator.new.generate(
+      api_request_type: 'comments',
+      photo_id: params[:photo_id]
+    )
 
-    @comments =
-      ApplicationController::CacheApiRequest.new(api_request).call(unique_key, cache: 15)
+    @comments = CacheApiRequest.new(api_request).call(unique_key, cache: 15)
 
     respond_to do |format|
       format.js

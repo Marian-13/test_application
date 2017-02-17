@@ -21,6 +21,5 @@ rails server
 ```
 ### Known issues
 
-1. Pagination 'Previous' button isn't working properly
-2. Majority of specs are failed using `bundle exec rspec spec/some_folder`
+1. Majority of specs are failed using `bundle exec rspec spec/some_folder`
 but same specs are passed successfully running `bundle exec rspec spec/some_folder/some_spec.rb`

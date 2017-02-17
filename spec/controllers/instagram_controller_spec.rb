@@ -1,5 +1,4 @@
 require 'rails_helper'
-require_relative 'test_data'
 
 RSpec.describe InstagramController, type: :controller do
   let(:instagram_access_token) { 'fb2e77d.47a0479900504cb3ab4a1f626d174d2d' }
@@ -30,20 +29,6 @@ RSpec.describe InstagramController, type: :controller do
   end
 
   describe 'GET #callback' do
-    context 'when user logged in via instagram' do
-      before(:example) do
-        get('callback', session: { instagram_access_token: instagram_access_token })
-      end
-
-      it 'sets flash notice' do
-        expect(flash[:notice]).not_to be_nil
-      end
-
-      it 'redirects to photos' do
-        expect(response).to redirect_to(photos_path)
-      end
-    end
-
     context 'when user not logged in via instagram' do
       let(:response_body) { TestData.instagram_response_body(instagram_access_token) }
 
@@ -62,6 +47,20 @@ RSpec.describe InstagramController, type: :controller do
       it 'redirects to photos' do
         get('callback')
 
+        expect(response).to redirect_to(photos_path)
+      end
+    end
+
+    context 'when user logged in via instagram' do
+      before(:example) do
+        get('callback', session: { instagram_access_token: instagram_access_token })
+      end
+
+      it 'sets flash notice' do
+        expect(flash[:notice]).not_to be_nil
+      end
+
+      it 'redirects to photos' do
         expect(response).to redirect_to(photos_path)
       end
     end

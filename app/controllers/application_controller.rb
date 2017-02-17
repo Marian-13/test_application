@@ -1,3 +1,7 @@
+# TODO
+require_relative 'application_controller/cache_unique_key_generator'
+require_relative 'application_controller/cache_api_request'
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 

@@ -1,5 +1,5 @@
 <%= form_tag photos_path, method: :get do %>
-  <%= hidden_field_tag :min_tag_id, photos.pagination.min_tag_id %>
-  <%= hidden_field_tag :tag, params[:tag] %>
+  <%= hidden_field_tag :previous_page, previous_page(current_page) %>
+  <%= hidden_field_tag :tag, tag %>
   <%= submit_tag 'Previous', name: nil, class: 'btn btn-default left' %>
 <% end %>
